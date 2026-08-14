@@ -1,8 +1,12 @@
 node_modules/
 .npm-cache/
 
-# stale local copies (the canonical artifacts live in share/one-click-launcher/)
+# eye plugin runtime artifacts (scripts + config with API keys, local only)
+.eye/
+
+# workspace-local launcher copies (canonical artifacts live in plugins/)
 /start-dsh.bat
 /DeepSeekHarness.exe
 
+# build artifact
 /one-click-launcher.zip
