@@ -9,16 +9,17 @@ DeepSeek Harness 插件开发工作区:一个插件项目一个文件夹,统一�
 ```
 deepseekH\
 ├── plugins\                        # 插件项目(每个插件一个文件夹)
-│   └── one-click-launcher\         # ⚡ 一键启动器插件
-│       ├── start-dsh.bat           #   主启动器(便携版:自动装依赖 + 自动生成 exe)
-│       ├── DeepSeekHarness.exe     #   exe 壳
-│       ├── make-launcher.ps1       #   独立生成器(免 DSH,任何 Windows 机器可用)
-│       ├── launcher.cs             #   exe 的 C# 源码
-│       ├── README.md               #   该插件的使用说明
-│       └── plugin\                 #   DSH 动态插件源码
-│           ├── host.js             #     Host 半区
-│           ├── client.js           #     Client 半区
-│           └── INSTALL.md          #     安装到 DSH 会话的步骤
+│   ├── one-click-launcher\         # ⚡ 一键启动器插件
+│   │   ├── start-dsh.bat           #   主启动器(便携版:自动装依赖 + 自动生成 exe)
+│   │   ├── DeepSeekHarness.exe     #   exe 壳
+│   │   ├── make-launcher.ps1       #   独立生成器(免 DSH,任何 Windows 机器可用)
+│   │   ├── launcher.cs             #   exe 的 C# 源码
+│   │   ├── README.md               #   该插件的使用说明
+│   │   └── plugin\                 #   DSH 动态插件源码
+│   │       ├── host.js             #     Host 半区
+│   │       ├── client.js           #     Client 半区
+│   │       └── INSTALL.md          #     安装到 DSH 会话的步骤
+│   └── eye\                        # 👁 eye 插件(骨架)
 ├── package.json                    # 工作区 npm 配置(dsh CLI)
 ├── start-dsh.bat                   # 本工作区自己的启动器(本地使用,不入库)
 ├── DeepSeekHarness.exe             # 同上
