@@ -1,0 +1,6 @@
+[submodule "plugins/one-click-launcher"]
+	path = plugins/one-click-launcher
+	url = https://github.com/wenliang9527/dsh-one-click-launcher.git
+[submodule "plugins/eye"]
+	path = plugins/eye
+	url = https://github.com/wenliang9527/dsh-eye.git

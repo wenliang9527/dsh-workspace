@@ -1,15 +1,29 @@
 # ⚡ dsh Plugins Workspace
 
-DeepSeek Harness 插件开发工作区:一个插件项目一个文件夹,统一放在 `plugins/` 下。
+DeepSeek Harness 插件开发工作区:一个插件项目一个文件夹(各自独立 GitHub 仓库,主仓用 submodule 引用)。
 
 **Topics:** `dsh-plugin` · `deepseek-harness` · `one-click-launcher` · `windows` · `bat`
+
+## 仓库清单
+
+| 仓库 | 说明 |
+|---|---|
+| [dsh-workspace](https://github.com/wenliang9527/dsh-workspace) | 本工作区(README、package.json,submodule 引用各插件) |
+| [dsh-one-click-launcher](https://github.com/wenliang9527/dsh-one-click-launcher) | ⚡ 一键启动器插件 |
+| [dsh-eye](https://github.com/wenliang9527/dsh-eye) | 👁 eye 插件 |
+
+克隆工作区(含所有插件):
+
+```sh
+git clone --recursive https://github.com/wenliang9527/dsh-workspace.git
+```
 
 ## 目录结构
 
 ```
 deepseekH\
-├── plugins\                        # 插件项目(每个插件一个文件夹)
-│   ├── one-click-launcher\         # ⚡ 一键启动器插件
+├── plugins\                        # 插件项目(每个插件 = 一个独立仓库,经 submodule 挂载)
+│   ├── one-click-launcher\         # ⚡ 一键启动器插件 → dsh-one-click-launcher
 │   │   ├── start-dsh.bat           #   主启动器(便携版:自动装依赖 + 自动生成 exe)
 │   │   ├── DeepSeekHarness.exe     #   exe 壳
 │   │   ├── make-launcher.ps1       #   独立生成器(免 DSH,任何 Windows 机器可用)
@@ -19,7 +33,7 @@ deepseekH\
 │   │       ├── host.js             #     Host 半区
 │   │       ├── client.js           #     Client 半区
 │   │       └── INSTALL.md          #     安装到 DSH 会话的步骤
-│   └── eye\                        # 👁 eye 插件(骨架)
+│   └── eye\                        # 👁 eye 插件(骨架)→ dsh-eye
 ├── package.json                    # 工作区 npm 配置(dsh CLI)
 ├── start-dsh.bat                   # 本工作区自己的启动器(本地使用,不入库)
 ├── DeepSeekHarness.exe             # 同上
@@ -50,6 +64,12 @@ deepseekH\
 2. 按需创建文件:`host.js`(Host 半区)、`client.js`(Client 半区)、`README.md`
 3. 在本工作区的 DSH 会话里用 `cordis_define` 加载调试(流程参考 `plugins/one-click-launcher/plugin/INSTALL.md`)
 4. 开发期复用工作区根部的 `package.json` / `node_modules`,用 `npm run dsh` 或 `npm start` 启动 Harness
+5. 成熟后独立建仓:在插件目录内 `git init` + 建 GitHub 仓库推送,然后回主仓:
+   ```sh
+   git submodule add https://github.com/<你>/<dsh-插件名>.git plugins/<my-plugin>
+   ```
+
+> 小技巧:插件目录内已有独立 `.git` 时,`git submodule add` 会直接把它登记进主仓("Adding existing repo"),无需重新克隆。
 
 ## 说明
 
