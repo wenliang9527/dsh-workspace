@@ -1,0 +1,8 @@
+node_modules/
+.npm-cache/
+
+# stale local copies (the canonical artifacts live in share/one-click-launcher/)
+/start-dsh.bat
+/DeepSeekHarness.exe
+
+/one-click-launcher.zip

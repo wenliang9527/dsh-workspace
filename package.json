@@ -1,0 +1,13 @@
+{
+  "name": "deepseekh",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeepSeek Harness (dsh) local workspace",
+  "scripts": {
+    "dsh": "dsh web",
+    "start": "dsh web"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh": "latest"
+  }
+}
