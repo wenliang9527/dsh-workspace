@@ -2,6 +2,8 @@
 
 双击即启动 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的一键启动器(bat + exe)及其生成器、DSH 插件源码。
 
+**Topics:** `dsh-plugin` · `deepseek-harness` · `one-click-launcher` · `windows` · `bat`
+
 ## 内容
 
 | 路径 | 说明 |
