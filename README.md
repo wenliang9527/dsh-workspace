@@ -21,6 +21,18 @@
 
 > 使用期间保持终端窗口打开;关窗 = 关闭 Harness。
 
+## 安装为 DSH 插件(侧边栏 ⚡ 启动器 按钮)
+
+已经在跑 DSH Web 界面的机器,可以把生成器装成动态插件,点击侧边栏底部的按钮即可在工作区一键生成启动器:
+
+1. 在 DSH 会话里让 AI 用 `cordis_define` 新建插件(`idPrefix: "launch"`)
+2. `code.host` ← `share/one-click-launcher/plugin/host.js` 的内容
+3. `code.client` ← `share/one-click-launcher/plugin/client.js` 的内容
+4. `cordis_run` 激活并在界面批准授权
+5. 侧边栏底部出现 **⚡ 启动器** 按钮,点击即生成 `start-dsh.bat` + `DeepSeekHarness.exe`
+
+> 详细步骤见 `share/one-click-launcher/plugin/INSTALL.md`。插件是会话级的,重启后按钮消失,但生成的文件永久可用。
+
 ## 说明
 
 - 仅限 Windows(bat/exe 为 Windows 专属)
